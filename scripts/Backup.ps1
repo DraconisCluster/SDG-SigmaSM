@@ -27,11 +27,19 @@ if ($verify_files_dir) {
 	$verify_weekly_dir = Test-Path "$remotedir\weekly"
 	$verify_monthly_dir = Test-Path "$remotedir\monthly"
 	$verify_staging = Test-Path "$stagedir"
+	$verify_outputdir =  Test-Path "$outputdir"
 
 	if (!$verify_staging) {
 		$md_daily = md $stagedir
 		if (!$md_staging) {
 			Write-Host "Error setting up Stage directories. Check Permissions."
+			exit
+		}
+	}
+	if (!$verify_outputdir) {
+		$md_outputdir = md $outputdir
+		if (!$md_outputdir) {
+			Write-Host "Error setting up output directory. Check Permissions."
 			exit
 		}
 	}
