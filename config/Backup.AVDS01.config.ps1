@@ -7,7 +7,7 @@ $global:remotedir = "$game_dir\backups\remote"  # This is the remote(off machine
 #$global:remotedir = "\\draconis0.sigmadraconis.games\avorion-backups\$SSM_Profile"  # This is the remote(off machine) Directory to store backup copies in.
 $global:filename = "AvorionBackup"  # Filename Prefix (without a trailing separator) for Backups
 
-[int]$global:DayOfWeek = 1  # The day of the week to store for weekly files (1 to 7 where 1 is Sunday)
+$global:DayOfWeek = "Sunday"  # The day of the week to store for weekly files
 [int]$global:DayOfMonth = 1  # The day of the month to store for monthly files (Max = 28 since varying last day of month not currently handled)
 
 [int]$global:RotationDaily = 7  # The number of daily files to keep (In days)

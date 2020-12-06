@@ -78,15 +78,16 @@ if ($files_root) {
 
 	foreach ($file in $files_root) {
 		$file_date = get-date $file.LastWriteTime
-		if ($file_date -ge $Now.AddDays(-$RotationWeekly * 7) -and [int]$file_date.DayOfWeek -eq $DayOfWeek -and [string]::IsNullOrWhiteSpace($rot_chk_w)) {
-			Write-Host "Making Weekly Remote Copy: $($file.Name) - $($file_date)"	
+		[string]$file_date_DayOfWeek = $file_date.DayOfWeek
+		if ($file_date_DayOfWeek.ToLower() -eq $DayOfWeek.ToLower() -and [string]::IsNullOrWhiteSpace($rot_chk_w)) {
+			Write-Host "Making Weekly Remote Copy: $($file.Name) - $($file_date) - $($file_date.DayOfWeek)"	
 			Copy-Item "$stagedir\$file" "$remotedir\weekly"
 		}
-		if ($file_date -ge $Now.AddDays(-$RotationMonthly * 30) -and [int]$file_date.Day -eq $DayOfMonth -and [string]::IsNullOrWhiteSpace($rot_chk_m)) {
-			Write-Host "Making Monthly Remote Copy: $($file.Name) - $($file_date) $([int]$file_date.DayOfWeek)"
+		if ([int]$file_date.Day -eq $DayOfMonth -and [string]::IsNullOrWhiteSpace($rot_chk_m)) {
+			Write-Host "Making Monthly Remote Copy: $($file.Name) - $($file_date)"
 			Copy-Item "$stagedir\$file" "$remotedir\monthly"
 		}
-		if ($file_date -ge $Now.AddDays(-$RotationDaily) -and [string]::IsNullOrWhiteSpace($rot_chk_d)) {
+		if ([string]::IsNullOrWhiteSpace($rot_chk_d)) {
 			Write-Host "Making Daily Remote Copy: $($file.Name) - $($file_date)"
 			Copy-Item "$stagedir\$file" "$remotedir\daily"
 		}
