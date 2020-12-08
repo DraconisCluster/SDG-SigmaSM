@@ -27,7 +27,7 @@ if ($verify_files_dir) {
 	$verify_weekly_dir = Test-Path "$remotedir\weekly"
 	$verify_monthly_dir = Test-Path "$remotedir\monthly"
 	$verify_staging = Test-Path "$stagedir"
-	$verify_outputdir =  Test-Path "$outputdir"
+	$verify_outputdir = Test-Path "$outputdir"
 
 	if (!$verify_staging) {
 		$md_daily = md $stagedir
@@ -86,8 +86,8 @@ if ($files_root) {
 
 	foreach ($file in $files_root) {
 		$file_date = get-date $file.LastWriteTime
-		[string]$file_date_DayOfWeek = $file_date.DayOfWeek
-		if ($file_date_DayOfWeek.ToLower() -eq $DayOfWeek.ToLower() -and [string]::IsNullOrWhiteSpace($rot_chk_w)) {
+		[string]$file_date_DayOfWeek = [string]$file_date.DayOfWeek
+		if ([string]$file_date_DayOfWeek.ToLower() -eq [string]$DayOfWeek.ToLower() -and [string]::IsNullOrWhiteSpace($rot_chk_w)) {
 			Write-Host "Making Weekly Remote Copy: $($file.Name) - $($file_date) - $($file_date.DayOfWeek)"	
 			Copy-Item "$stagedir\$file" "$remotedir\weekly"
 		}
