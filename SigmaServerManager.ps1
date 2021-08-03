@@ -27,7 +27,7 @@ Switch ($($menu_response.toUpper()))
 # Ensure we aren't running with a shortented delay.
 $restart_orig = $restart_delay
 
-Check_Clock  # Exits if the clock is off by more than 30 seconds.
+#Check_Clock  # Exits if the clock is off by more than 30 seconds.
 
 # Main loop
 Timers 

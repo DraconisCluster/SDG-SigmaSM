@@ -2,7 +2,7 @@ function Check_Update {
     if ($update_timer.Elapsed.TotalMinutes -ge $update_delay -and $global:update_chk_done -ne "1") {
         timestamp
         Write-Host "Checking for steam updates..."
-        $check_update = & $steamcmd +login anonymous +force_install_dir "$game_dir\avorionserver" +app_update 565060 -beta beta validate +quit | findstr -i "fully installed."
+        $check_update = & $steamcmd +login anonymous +force_install_dir "$game_dir\avorionserver" +app_update 565060 -beta beta +quit | findstr -i "fully installed."
         If ($check_update) {
             $global:restart_delay = 11
             $restart_timer.Restart()
