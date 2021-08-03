@@ -9,7 +9,7 @@ function Banner {
      `Y88b,  888 "88_88" 888  888  888  e88==888  `Y88b,    // Y88Y Y888b   
        8888 888  //     888  888  888 C888  888    8888  //   YY   Y888b  
     \\__88P'888 Cb      888  888  888  "88_=888 \\__88P'//          Y888b 
-                 Y888D    
+                 B===D    
                             github.com/DraconisCluster/SDG-SigmaSM
                             v$version - By DeMiNe0#7620                                           
 

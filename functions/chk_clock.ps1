@@ -1,4 +1,4 @@
-function Check_Clock ($MaxOffset = 30000, $NTPServer = "time.nist.gov") {
+function Check_Clock ($MaxOffset = 90000, $NTPServer = "time.nist.gov") {
     # Check Time
     . "$SSM_path\scripts\Get-NtpTime.ps1"
     Write-Host "Ensuring the correct server time..."

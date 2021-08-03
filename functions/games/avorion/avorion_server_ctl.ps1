@@ -9,7 +9,7 @@ function Start_Server {
         discord_webhook "Starting Server..."
         # Start Avorion Server
         Set-Location "$game_dir\avorionserver\"
-        & $steamcmd +login anonymous +force_install_dir "$game_dir\avorionserver" +app_update 565060 +quit
+        & $steamcmd +login anonymous +force_install_dir "$game_dir\avorionserver" +app_update 565060 -beta beta +quit
         Start-Process -FilePath $game_path -ArgumentList $game_args
     } else {
         # Execute the Backup
@@ -21,7 +21,7 @@ function Start_Server {
         discord_webhook "Starting Server..."
         # Start Avorion Server
         Set-Location "$game_dir\avorionserver\"
-        & $steamcmd +login anonymous +force_install_dir "$game_dir\avorionserver" +app_update 565060 +quit
+        & $steamcmd +login anonymous +force_install_dir "$game_dir\avorionserver" +app_update 565060 -beta beta +quit
         Start-Process -FilePath $game_path -ArgumentList $game_args
     }
     $global:restart_delay = $restart_orig
@@ -31,7 +31,7 @@ function Start_Server {
 function Stop_Server {
     timestamp
     Write-Host "Stopping Server..."
-    discord_webhook "Stoping Server..."
+    discord_webhook "Stopping Server..."
     weiner
     rcon -action say -arg "Stopping Server..."
     rcon -action stop

@@ -2,7 +2,7 @@ function rcon ($action, $arg) {
     $galaxycfg = Get_IniFile $game_dir\galaxies\$GALAXY\server.ini
     $rcon_port = $galaxycfg.Networking.rconPort
     $rcon_pass = $galaxycfg.Networking.rconPassword
-    $rcon_host = "127.0.0.1"
+    $rcon_host = "51.81.154.230"
     Switch ($action)
     {
         stop {

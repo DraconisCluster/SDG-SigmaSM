@@ -3,8 +3,8 @@ $global:inputdir = "$game_dir\galaxies\AVDS01"  # Directory to be backed up.
 $global:inputfiles = "*"  # Exact name or wildcard match for files in that director.
 $global:stagedir = "$game_dir\backups\temp"  # Output Directory for backup archives
 $global:outputdir = "$game_dir\backups\archives"  # Output Directory for backup archives
-$global:remotedir = "$game_dir\backups\remote"  # This is the remote(off machine) Directory to store backup copies in.
-#$global:remotedir = "\\draconis0.sigmadraconis.games\avorion-backups\$SSM_Profile"  # This is the remote(off machine) Directory to store backup copies in.
+#$global:remotedir = "$game_dir\backups\remote"  # This is the remote(off machine) Directory to store backup copies in.
+$global:remotedir = "O:\Backups\avorion\$SSM_Profile"  # This is the remote(off machine) Directory to store backup copies in.
 $global:filename = "AvorionBackup"  # Filename Prefix (without a trailing separator) for Backups
 
 $global:DayOfWeek = "Sunday"  # The day of the week to store for weekly files

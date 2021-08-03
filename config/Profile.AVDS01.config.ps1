@@ -12,6 +12,6 @@ param (
     [int]$global:backuptimeout = 10,  # Number of seconds you have to cancel the backup.
 
     [int]$global:loop_delay = 10,  # Delay in seconds between loop cycles. Default Safe Range is between 10 and 60.
-    [int]$global:restart_delay = 120,  # Delay in minutes between server restarts
+    [int]$global:restart_delay = 240,  # Delay in minutes between server restarts
     [int]$global:update_delay = 30  # Delay in minutes between automated steamcmd update checks
 )
